@@ -1,0 +1,12 @@
+{
+  "_комментарий": "Кладётся НА НОУТБУК, в папку, из которой запускается claude. Сервер только синкает; Claude Code на сервер ставить не нужно. Инструкция: LOCAL_CLAUDE.md",
+  "mcpServers": {
+    "telegram": {
+      "command": "ssh",
+      "args": [
+        "ops@server",
+        "cd ~/tg-claude && TG_DB=connector/data/tg.db connector/.venv/bin/python connector/mcp_server.py"
+      ]
+    }
+  }
+}

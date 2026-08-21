@@ -1,0 +1,23 @@
+# Живая доставка: Telegram сам присылает новые сообщения. Один сервис на аккаунт.
+# Крон для tg_sync.py при этом НЕ НУЖЕН и должен быть снят: два процесса на одном
+# ключе Telegram = отзыв ключа, а не замедление.
+#
+# Скопировать под именем tg-live@.service, тогда:
+#   systemctl enable --now tg-live@anna
+[Unit]
+Description=tg-claude: живая доставка Telegram для %i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ops
+WorkingDirectory=/home/ops/tg-claude
+ExecStart=/home/ops/tg-claude/connector/.venv/bin/python connector/tg_live.py --slug %i
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

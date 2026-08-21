@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "telegram": {
+      "command": "./connector/.venv/bin/python",
+      "args": ["./connector/mcp_server.py"],
+      "env": { "TG_DB": "./connector/data/tg.db" }
+    }
+  }
+}

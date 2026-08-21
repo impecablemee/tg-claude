@@ -1,0 +1,11 @@
+# A session string IS the person's Telegram account. It never enters git.
+connector/data/
+connector/sessions/
+connector/.venv/
+__pycache__/
+qr.png
+*.session
+*.string
+.v/
+.venv/
+venv/

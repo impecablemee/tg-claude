@@ -1,0 +1,4 @@
+telethon==1.43.0
+qrcode[pil]>=7.4
+# 2.x renamed FastMCP -> MCPServer; mcp_server.py handles both
+mcp>=2.0
